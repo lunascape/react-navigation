@@ -35,7 +35,7 @@ type HeaderState = {
 };
 
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
-const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? Dimensions.get('window').height == 812 ? 44 : 20 : 0;
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? Math.max(Dimensions.get('screen').width, Dimensions.get('screen').height) == 812 ? 44 : 20 : 0;
 const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
 
 class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
