@@ -297,7 +297,7 @@ class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
 
     const { options } = this.props.getScreenDetails(scene);
     const headerStyle = options.headerStyle;
-    const landscapeAwareStatusBarHeight = isLandscape ? 0 : STATUSBAR_HEIGHT;
+    const landscapeAwareStatusBarHeight = ((isLandscape && !screenProps.isTablet) || screenProps.displayMode === 'popup') ? 0 : STATUSBAR_HEIGHT;
     const containerStyles = [
       styles.container,
       {
